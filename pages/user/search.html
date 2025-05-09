@@ -9,9 +9,8 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Astro v5.7.10" />
-    <title>View</title>
-    <link rel="shortcut icon" href="../../imgs/view.png" type="image/x-icon">
-
+    <title>Search Page</title>
+    <link rel="shortcut icon" href="../../imgs/add.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css"
@@ -23,9 +22,6 @@
     <script src="../../js/color-modes.js"></script>
     <link href="../../css/bootstrap.min.css" rel="stylesheet" />
     <style>
-      *{
-        letter-spacing: 0.066rem;
-      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -97,10 +93,10 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
-
     </style>
 
     <link rel="stylesheet" href="../../css/mystyle.css" />
+    <script defer src="../../js/scripts.js"></script>
   </head>
 
   <body>
@@ -246,46 +242,50 @@
 
     <main class="d-flex flex-nowrap">
       <div
-        class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
+        id="sidebarId"
+        class="d-flex flex-column flex-nowrap flex-shrink-0 p-3 text-bg-dark sidebar"
         style="width: 280px"
       >
+        <!-- small - big  buttons-->
+
+        <i id="minimize" class="bi bi-x-lg fs-3 p-3"></i>
+
+        <i id="maximize" class="bi bi-arrow-right-circle fs-3 p-3 none"></i>
+
         <a
           href="/"
           class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
         >
-          <i class="bi bi-lightning-charge me-3 fw-bolder fs-3"></i>
-          <span class="fs-3">Sidebar</span>
+          <i class="bi bi-lightning-charge me-3 fw-bolder fs-3 sidebar-icon"></i>
+          <span class="fs-3 minimize-rm" data-fulltext="Sidebar">Sidebar</span>
         </a>
         <hr />
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
             <a href="/" class="nav-link text-white" aria-current="page">
               <svg
-                class="bi pe-none me-2"
+                class="bi pe-none me-2 sidebar-icon"
                 width="16"
                 height="16"
                 aria-hidden="true"
               >
                 <use xlink:href="#home"></use>
               </svg>
-              Home
+              <span class="minimize-rm" data-fulltext="Home"> Home</span>
             </a>
           </li>
 
           <li>
-            <a
-              href="../../pages/user/add.html"
-              class="nav-link text-white"
-            >
+            <a href="../../pages/user/add.html" class="nav-link text-white">
               <svg
-                class="bi pe-none me-2"
+                class="bi pe-none me-2 sidebar-icon"
                 width="16"
                 height="16"
                 aria-hidden="true"
               >
                 <use xlink:href="#people-circle"></use>
               </svg>
-              Add Customers
+            <span class="minimize-rm" data-fulltext="Add Customers"> Add Customers </span> 
             </a>
           </li>
         </ul>
@@ -340,74 +340,61 @@
           </div>
         </nav>
 
-
-        <nav aria-label="breadcrumb" class="mt-4 px-3 d-flex justify-content-between flex-wrap"
-        style="width: 88%;">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Mohammed Abdelaleem</li>
-          </ol>
-
-          <p ><span class="fw-bolder fs-4">Id: </span>121212744787ddfd787</p>
-
-        </nav>
-
-        <table class="mt-5 ms-2 table table-striped table-bordered"
-        style="width: 88%;"
+        <table
+          class="table text-center table-bordered table-striped mx-auto mt-5"
+          style="width: 98%"
         >
-          <tbody >
+          <thead>
             <tr>
-              <td class="fw-bolder">First Name</td>
-              <td  class="fw-medium">Mohammed</td>
-            </tr>
+              <th scope="col">#</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Country</th>
 
-            <tr>
-              <td  class="fw-bolder">Last Name</td>
-              <td class="fw-medium">Abdelaleem</td>
+              <th scope="col">Action</th>
             </tr>
+          </thead>
 
+          <tbody>
             <tr>
-              <td class="fw-bolder">Telephone</td>
-              <td class="fw-medium">01030632293</td>
-            </tr>
+              <th scope="row">1</th>
+              <td>Test 02</td>
+              <td>Test 03</td>
+              <td>Test 04</td>
 
-            <tr>
-              <td class="fw-bolder">Email</td>
-              <td class="fw-medium">mo@gmail.com</td>
-            </tr>
-            <tr>
-              <td class="fw-bolder">Gender</td>
-              <td class="fw-medium">Male</td>
-            </tr>
+              <td>
+                <a
+                  href="./pages/user/view.html"
+                  class="btn btn-primary btn-sm"
+                  data-bs-toggle="tooltip"
+                  data-bs-title="View Details"
+                  data-bs-placement="top"
+                >
+                  <i class="bi bi-eye"></i>
+                </a>
 
-            <tr>
-              <td class="fw-bolder">Age</td>
-              <td class="fw-medium">21</td>
+                <a
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Edit"
+                  data-bs-placement="top"
+                  href="./pages/user/edit.html"
+                  class="btn btn-primary btn-sm"
+                >
+                  <i class="bi bi-pencil"></i>
+                </a>
+                <button
+                  data-bs-toggle="tooltip"
+                  data-bs-title="Delete"
+                  data-bs-placement="top"
+                  class="btn btn-danger btn-sm"
+                >
+                  <i class="bi bi-trash-fill"></i>
+                </button>
+              </td>
             </tr>
-
-            <tr>
-              <td class="fw-bolder">Country</td>
-              <td class="fw-medium">Egypt</td>
-            </tr>
-
-            <tr>
-              <td class="fw-bolder">Created On</td>
-              <td class="fw-medium">Test</td>
-            </tr>
-
-            <tr>
-              <td class="fw-bolder">Last Updated</td>
-              <td class="fw-medium">test 2</td>
-            </tr>
-          
           </tbody>
         </table>
-
       </section>
-
-
-
-
     </main>
     <script src="../../js/bootstrap.bundle.min.js"></script>
     <script>

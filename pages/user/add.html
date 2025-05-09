@@ -9,9 +9,8 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Astro v5.7.10" />
-    <title>View</title>
-    <link rel="shortcut icon" href="../../imgs/view.png" type="image/x-icon">
-
+    <title>Add</title>
+    <link rel="shortcut icon" href="../../imgs/add.png" type="image/x-icon">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css"
@@ -23,9 +22,6 @@
     <script src="../../js/color-modes.js"></script>
     <link href="../../css/bootstrap.min.css" rel="stylesheet" />
     <style>
-      *{
-        letter-spacing: 0.066rem;
-      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -97,7 +93,6 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
-
     </style>
 
     <link rel="stylesheet" href="../../css/mystyle.css" />
@@ -275,7 +270,7 @@
           <li>
             <a
               href="../../pages/user/add.html"
-              class="nav-link text-white"
+              class="nav-link text-white active"
             >
               <svg
                 class="bi pe-none me-2"
@@ -340,74 +335,87 @@
           </div>
         </nav>
 
+        <form class="row mx-0 gx-4 gy-4 mt-4 px-2">
+          <div class="col-12 col-md-6">
+            <label for="Firstname" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Firstname"
+              placeholder="Mohammed.."
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="Lastname" class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Lastname"
+              placeholder="Abdelaleem.."
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail4"
+              placeholder="mo@gmail.com"
+            />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="Telephone" class="form-label">Telephone</label>
+            <input
+              type="number"
+              class="form-control"
+              id="Telephone"
+              placeholder="010306222.."
+            />
+          </div>
 
-        <nav aria-label="breadcrumb" class="mt-4 px-3 d-flex justify-content-between flex-wrap"
-        style="width: 88%;">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Mohammed Abdelaleem</li>
-          </ol>
+  <div>
+            <div class="col-12 col-md-6">
+              <label for="age" class="form-label">Age</label>
+              <input
+                type="number"
+                class="form-control"
+                id="age"
+                placeholder="Age: 33.."
+                min="1"
+                max="100"
+              />
+            </div>
+  </div>
 
-          <p ><span class="fw-bolder fs-4">Id: </span>121212744787ddfd787</p>
-
-        </nav>
-
-        <table class="mt-5 ms-2 table table-striped table-bordered"
-        style="width: 88%;"
-        >
-          <tbody >
-            <tr>
-              <td class="fw-bolder">First Name</td>
-              <td  class="fw-medium">Mohammed</td>
-            </tr>
-
-            <tr>
-              <td  class="fw-bolder">Last Name</td>
-              <td class="fw-medium">Abdelaleem</td>
-            </tr>
-
-            <tr>
-              <td class="fw-bolder">Telephone</td>
-              <td class="fw-medium">01030632293</td>
-            </tr>
-
-            <tr>
-              <td class="fw-bolder">Email</td>
-              <td class="fw-medium">mo@gmail.com</td>
-            </tr>
-            <tr>
-              <td class="fw-bolder">Gender</td>
-              <td class="fw-medium">Male</td>
-            </tr>
-
-            <tr>
-              <td class="fw-bolder">Age</td>
-              <td class="fw-medium">21</td>
-            </tr>
-
-            <tr>
-              <td class="fw-bolder">Country</td>
-              <td class="fw-medium">Egypt</td>
-            </tr>
-
-            <tr>
-              <td class="fw-bolder">Created On</td>
-              <td class="fw-medium">Test</td>
-            </tr>
-
-            <tr>
-              <td class="fw-bolder">Last Updated</td>
-              <td class="fw-medium">test 2</td>
-            </tr>
-          
-          </tbody>
-        </table>
-
+  <div>
+            <div class="col-12 col-md-6 ">
+              <label for="country" class="form-label">Country</label>
+              <select id="country" class="form-select">
+                <option selected hidden disabled>Choose Your Country</option>
+                <option value="1">Egypt</option>
+                <option value="2">USA</option>
+              </select>
+            </div>
+    
+  </div>
+          <div class="col-12 col-md-6 ">
+            <label for="gender" class="form-label">Gender</label>
+            <select id="gender" class="form-select">
+              <option selected hidden disabled>Choose Your Gender</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+            </select>
+          </div>
+          <div class="d-flex flex-direction-column">
+            <div class="col-12">
+              
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
       </section>
-
-
-
-
     </main>
     <script src="../../js/bootstrap.bundle.min.js"></script>
     <script>

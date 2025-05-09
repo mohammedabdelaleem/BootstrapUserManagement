@@ -1,0 +1,41 @@
+.sidebar {
+  width: 240px !important;
+  transition: 0.3s all;
+}
+
+.sidebar-small {
+  width: 70px !important;
+}
+
+.bi:hover {
+  cursor: pointer;
+  color: gold ;
+}
+
+#minimize {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+#maximize {
+  position: absolute;
+  right: 13px;
+  top: 5px;
+}
+
+#sidebarId {
+  position: relative;
+}
+
+.none {
+  display: none;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.mt-6 {
+  margin-top: 60px;
+}
