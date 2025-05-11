@@ -20,7 +20,6 @@ const handleMinimize = () => {
 
   localStorage.setItem(SmallSidebarState, "1");
 
-  console.log("Sidebar minimized");
 };
 
 const handleMaximize = () => {
@@ -35,7 +34,7 @@ const handleMaximize = () => {
 
   localStorage.setItem(SmallSidebarState, "0");
 
-  console.log("Sidebar maximized");
+
 };
 
 const hasSidebarState = () => {
@@ -44,7 +43,6 @@ const hasSidebarState = () => {
 
 const initiateSidebar = () => {
   if (!hasSidebarState()) {
-    console.log("Initializing sidebar state");
     localStorage.setItem(SmallSidebarState, "0"); // default to maximized
   }
 };
