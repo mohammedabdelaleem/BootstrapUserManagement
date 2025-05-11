@@ -18,8 +18,11 @@
       rel="canonical"
       href="https://getbootstrap.com/docs/5.3/examples/sidebars/"
     />
+    <link rel="stylesheet" href="./css/mystyle.css" />
     <script src="./Js/color-modes.js"></script>
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
+
+    <script defer src="./js/scripts.js"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -235,44 +238,55 @@
     </svg>
 
     <main class="d-flex flex-nowrap">
-      <div
-        class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
-        style="width: 280px"
-      >
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar">
+        <!-- small - big  buttons-->
+        <i id="minimize" class="bi bi-x-lg fs-2 fw-bolder p-3"></i>
+
+        <i
+          id="maximize"
+          class="none bi bi-arrow-right-circle fs-2 fw-bolder p-3"
+        ></i>
+
         <a
           href="/"
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+          class="d-flex flex-wrap align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
         >
-          <i class="bi bi-lightning-charge me-3 fw-bolder fs-3"></i>
-          <span class="fs-3">Sidebar</span>
+          <i
+            id="lightning"
+            class="bi bi-lightning-charge me-3 fw-bolder fs-1"
+          ></i>
+          <span class="fs-3 sidebar-text">Sidebar</span>
         </a>
         <hr />
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="#" class="nav-link active" aria-current="page">
+            <a href="#" class="nav-link active side-icon" aria-current="page">
               <svg
                 class="bi pe-none me-2"
-                width="16"
-                height="16"
+                width="20"
+                height="20"
                 aria-hidden="true"
               >
                 <use xlink:href="#home"></use>
               </svg>
-              Home
+              <span class="sidebar-text">Home</span>
             </a>
           </li>
 
           <li>
-            <a href="./pages/user/add.html" class="nav-link text-white">
+            <a
+              href="./pages/user/add.html"
+              class="nav-link text-white side-icon"
+            >
               <svg
                 class="bi pe-none me-2"
-                width="16"
-                height="16"
+                width="20"
+                height="20"
                 aria-hidden="true"
               >
                 <use xlink:href="#people-circle"></use>
               </svg>
-              Add Customers
+              <span class="sidebar-text">Add Customers</span>
             </a>
           </li>
         </ul>
@@ -291,7 +305,7 @@
               height="32"
               class="rounded-circle me-2"
             />
-            <strong>Mohammed Abdelaleem</strong>
+            <strong class="sidebar-text">Mohammed Abdelaleem</strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -353,15 +367,12 @@
               <td>Test 06</td>
               <td>
                 <a
-            
                   href="./pages/user/view.html"
                   class="btn btn-primary btn-sm"
-
                   data-bs-toggle="tooltip"
                   data-bs-title="View Details"
                   data-bs-placement="top"
                 >
-                
                   <i class="bi bi-eye"></i>
                 </a>
 
@@ -384,7 +395,6 @@
                 </button>
               </td>
             </tr>
-            
           </tbody>
         </table>
       </section>
@@ -392,9 +402,12 @@
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script>
       // enable tooltips
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
     </script>
-    
   </body>
 </html>

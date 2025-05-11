@@ -10,7 +10,7 @@
     />
     <meta name="generator" content="Astro v5.7.10" />
     <title>Add</title>
-    <link rel="shortcut icon" href="../../imgs/add.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../imgs/add.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.12.1/font/bootstrap-icons.min.css"
@@ -95,6 +95,7 @@
       }
     </style>
 
+    <script defer src="../../js/scripts.js"></script>
     <link rel="stylesheet" href="../../css/mystyle.css" />
   </head>
 
@@ -240,47 +241,55 @@
     </svg>
 
     <main class="d-flex flex-nowrap">
-      <div
-        class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
-        style="width: 280px"
-      >
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar">
+        <!-- small - big  buttons-->
+        <i id="minimize" class="bi bi-x-lg fs-2 fw-bolder p-3"></i>
+
+        <i
+          id="maximize"
+          class="none bi bi-arrow-right-circle fs-2 fw-bolder p-3"
+        ></i>
+
         <a
           href="/"
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+          class="d-flex flex-wrap align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
         >
-          <i class="bi bi-lightning-charge me-3 fw-bolder fs-3"></i>
-          <span class="fs-3">Sidebar</span>
+          <i
+            id="lightning"
+            class="bi bi-lightning-charge me-3 fw-bolder fs-1"
+          ></i>
+          <span class="fs-3 sidebar-text">Sidebar</span>
         </a>
         <hr />
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="/" class="nav-link text-white" aria-current="page">
+            <a href="/" class="nav-link text-white side-icon" aria-current="page">
               <svg
                 class="bi pe-none me-2"
-                width="16"
-                height="16"
+                width="20"
+                height="20"
                 aria-hidden="true"
               >
                 <use xlink:href="#home"></use>
               </svg>
-              Home
+              <span class="sidebar-text">Home</span>
             </a>
           </li>
 
           <li>
             <a
-              href="../../pages/user/add.html"
-              class="nav-link text-white active"
+              href="#"
+              class="nav-link active text-white side-icon"
             >
               <svg
                 class="bi pe-none me-2"
-                width="16"
-                height="16"
+                width="20"
+                height="20"
                 aria-hidden="true"
               >
                 <use xlink:href="#people-circle"></use>
               </svg>
-              Add Customers
+              <span class="sidebar-text">Add Customers</span>
             </a>
           </li>
         </ul>
@@ -299,7 +308,7 @@
               height="32"
               class="rounded-circle me-2"
             />
-            <strong>Mohammed Abdelaleem</strong>
+            <strong class="sidebar-text">Mohammed Abdelaleem</strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -373,7 +382,7 @@
             />
           </div>
 
-  <div>
+          <div>
             <div class="col-12 col-md-6">
               <label for="age" class="form-label">Age</label>
               <input
@@ -385,10 +394,10 @@
                 max="100"
               />
             </div>
-  </div>
+          </div>
 
-  <div>
-            <div class="col-12 col-md-6 ">
+          <div>
+            <div class="col-12 col-md-6">
               <label for="country" class="form-label">Country</label>
               <select id="country" class="form-select">
                 <option selected hidden disabled>Choose Your Country</option>
@@ -396,9 +405,8 @@
                 <option value="2">USA</option>
               </select>
             </div>
-    
-  </div>
-          <div class="col-12 col-md-6 ">
+          </div>
+          <div class="col-12 col-md-6">
             <label for="gender" class="form-label">Gender</label>
             <select id="gender" class="form-select">
               <option selected hidden disabled>Choose Your Gender</option>
@@ -407,9 +415,7 @@
             </select>
           </div>
           <div class="d-flex flex-direction-column">
-            <div class="col-12">
-              
-            </div>
+            <div class="col-12"></div>
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary">Submit</button>

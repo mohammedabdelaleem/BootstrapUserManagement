@@ -1,35 +1,75 @@
-// Need Updated From The Begging 02:36:55
+// Define the key to be used in localStorage
+let SmallSidebarState = "Small-Sidebar";
 
-const sidebar = document.querySelector('.sidebar');
-const toggleButton = document.getElementById('toggleSidebar');
-const sidebarTextItems = document.querySelectorAll('.minimize-rm');
+// DOM Elements
+const minimize = document.getElementById("minimize");
+const maximize = document.getElementById("maximize");
+const sidebar = document.querySelector(".sidebar");
+const lightning = document.getElementById("lightning");
+const sidebarIcons = document.querySelectorAll(".side-icon");
 
-const minimizeSidebarText = () => {
-  sidebarTextItems.forEach(item => {
-    // Store original text only once
-    if (!item.dataset.fulltext) {
-      item.dataset.fulltext = item.innerHTML;
-    }
-    item.innerHTML = ''; // Minimize to icon-only view
+const handleMinimize = () => {
+  minimize.classList.add("none");
+  maximize.classList.remove("none");
+  sidebar.classList.add("sidebar-small");
+  lightning.classList.add("mt-6");
+
+  sidebarIcons.forEach((item) => {
+    item.classList.add("fit-icon");
   });
+
+  localStorage.setItem(SmallSidebarState, "1");
+
+  console.log("Sidebar minimized");
 };
 
-const restoreSidebarText = () => {
-  sidebarTextItems.forEach(item => {
-    if (item.dataset.fulltext) {
-      item.innerHTML = item.dataset.fulltext;
-    }
+const handleMaximize = () => {
+  minimize.classList.remove("none");
+  maximize.classList.add("none");
+  sidebar.classList.remove("sidebar-small");
+  lightning.classList.remove("mt-6");
+
+  sidebarIcons.forEach((item) => {
+    item.classList.remove("fit-icon");
   });
+
+  localStorage.setItem(SmallSidebarState, "0");
+
+  console.log("Sidebar maximized");
 };
 
-toggleButton.addEventListener('click', () => {
-  const isMinimized = sidebar.classList.contains('minimized');
+const hasSidebarState = () => {
+  return localStorage.getItem(SmallSidebarState) !== null;
+};
 
-  if (isMinimized) {
-    restoreSidebarText();
-    sidebar.classList.remove('minimized');
-  } else {
-    minimizeSidebarText();
-    sidebar.classList.add('minimized');
+const initiateSidebar = () => {
+  if (!hasSidebarState()) {
+    console.log("Initializing sidebar state");
+    localStorage.setItem(SmallSidebarState, "0"); // default to maximized
   }
-});
+};
+
+const applySidebarState = () => {
+  const state = localStorage.getItem(SmallSidebarState);
+  if (state === "1") {
+    handleMinimize();
+  } else {
+    handleMaximize();
+  }
+};
+
+const toggleSidebar = () => {
+  const state = localStorage.getItem(SmallSidebarState);
+  if (state === "0") {
+    handleMinimize();
+  } else {
+    handleMaximize();
+  }
+};
+
+initiateSidebar();
+applySidebarState();//////////////////////
+
+minimize.addEventListener("click", toggleSidebar);
+maximize.addEventListener("click", toggleSidebar);
+

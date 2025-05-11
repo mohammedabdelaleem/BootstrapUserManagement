@@ -10,7 +10,7 @@
     />
     <meta name="generator" content="Astro v5.7.10" />
     <title>View</title>
-    <link rel="shortcut icon" href="../../imgs/view.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../imgs/view.png" type="image/x-icon" />
 
     <link
       rel="stylesheet"
@@ -22,8 +22,10 @@
     />
     <script src="../../js/color-modes.js"></script>
     <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+
+    <script defer src="../../js/scripts.js"></script>
     <style>
-      *{
+      * {
         letter-spacing: 0.066rem;
       }
       .bd-placeholder-img {
@@ -97,7 +99,6 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
-
     </style>
 
     <link rel="stylesheet" href="../../css/mystyle.css" />
@@ -245,47 +246,55 @@
     </svg>
 
     <main class="d-flex flex-nowrap">
-      <div
-        class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
-        style="width: 280px"
-      >
+      <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar">
+        <!-- small - big  buttons-->
+        <i id="minimize" class="bi bi-x-lg fs-2 fw-bolder p-3"></i>
+
+        <i
+          id="maximize"
+          class="none bi bi-arrow-right-circle fs-2 fw-bolder p-3"
+        ></i>
+
         <a
           href="/"
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+          class="d-flex flex-wrap align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
         >
-          <i class="bi bi-lightning-charge me-3 fw-bolder fs-3"></i>
-          <span class="fs-3">Sidebar</span>
+          <i
+            id="lightning"
+            class="bi bi-lightning-charge me-3 fw-bolder fs-1"
+          ></i>
+          <span class="fs-3 sidebar-text">Sidebar</span>
         </a>
         <hr />
         <ul class="nav nav-pills flex-column mb-auto">
           <li class="nav-item">
-            <a href="/" class="nav-link text-white" aria-current="page">
+            <a href="/" class="nav-link text-white side-icon" aria-current="page">
               <svg
                 class="bi pe-none me-2"
-                width="16"
-                height="16"
+                width="20"
+                height="20"
                 aria-hidden="true"
               >
                 <use xlink:href="#home"></use>
               </svg>
-              Home
+              <span class="sidebar-text">Home</span>
             </a>
           </li>
 
           <li>
             <a
-              href="../../pages/user/add.html"
-              class="nav-link text-white"
+              href="./pages/user/add.html"
+              class="nav-link text-white side-icon"
             >
               <svg
                 class="bi pe-none me-2"
-                width="16"
-                height="16"
+                width="20"
+                height="20"
                 aria-hidden="true"
               >
                 <use xlink:href="#people-circle"></use>
               </svg>
-              Add Customers
+              <span class="sidebar-text">Add Customers</span>
             </a>
           </li>
         </ul>
@@ -304,7 +313,7 @@
               height="32"
               class="rounded-circle me-2"
             />
-            <strong>Mohammed Abdelaleem</strong>
+            <strong class="sidebar-text">Mohammed Abdelaleem</strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
             <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -340,29 +349,33 @@
           </div>
         </nav>
 
-
-        <nav aria-label="breadcrumb" class="mt-4 px-3 d-flex justify-content-between flex-wrap"
-        style="width: 88%;">
+        <nav
+          aria-label="breadcrumb"
+          class="mt-4 px-3 d-flex justify-content-between flex-wrap"
+          style="width: 88%"
+        >
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Mohammed Abdelaleem</li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Mohammed Abdelaleem
+            </li>
           </ol>
 
-          <p ><span class="fw-bolder fs-4">Id: </span>121212744787ddfd787</p>
-
+          <p><span class="fw-bolder fs-4">Id: </span>121212744787ddfd787</p>
         </nav>
 
-        <table class="mt-5 ms-2 table table-striped table-bordered"
-        style="width: 88%;"
+        <table
+          class="mt-5 ms-2 table table-striped table-bordered"
+          style="width: 88%"
         >
-          <tbody >
+          <tbody>
             <tr>
               <td class="fw-bolder">First Name</td>
-              <td  class="fw-medium">Mohammed</td>
+              <td class="fw-medium">Mohammed</td>
             </tr>
 
             <tr>
-              <td  class="fw-bolder">Last Name</td>
+              <td class="fw-bolder">Last Name</td>
               <td class="fw-medium">Abdelaleem</td>
             </tr>
 
@@ -399,15 +412,9 @@
               <td class="fw-bolder">Last Updated</td>
               <td class="fw-medium">test 2</td>
             </tr>
-          
           </tbody>
         </table>
-
       </section>
-
-
-
-
     </main>
     <script src="../../js/bootstrap.bundle.min.js"></script>
     <script>

@@ -1,41 +1,58 @@
 .sidebar {
-  width: 240px !important;
+  position: relative;
+  width: 290px;
   transition: 0.3s all;
 }
 
 .sidebar-small {
-  width: 70px !important;
+  width: 70px;
 }
 
-.bi:hover {
-  cursor: pointer;
-  color: gold ;
+/*
+ By default there is no .sidebar-small 
+ After Click It Will Toggle (sidebar-small, sidebar)
+ when found then remove text
+*/
+.sidebar-small .sidebar-text {
+  display: none;
+}
+
+.sidebar-small .bi-lightning-charge::before {
+    content: "\F46C";
+    transform: rotateY(360deg);
+    transition: all 0.6s;
 }
 
 #minimize {
   position: absolute;
-  right: 5px;
-  top: 5px;
+  top: 8px;
+  right: 1px;
+
+  transition: 0.7s all;
+}
+
+#minimize:hover,
+#maximize:hover {
+  color: gold;
+  opacity: 0.8;
 }
 
 #maximize {
   position: absolute;
-  right: 13px;
-  top: 5px;
-}
-
-#sidebarId {
-  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .none {
   display: none;
 }
 
-.hidden {
-  overflow: hidden;
+
+.mt-6{
+  margin-top: 68px;
 }
 
-.mt-6 {
-  margin-top: 60px;
+.fit-icon{
+      padding: 8px 10px !important;
+    width: 40px;
 }
